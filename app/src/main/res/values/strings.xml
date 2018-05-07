@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Daily Weather App!</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Daily Weather!</string>
+    <string name="nav_header_subtitle">Your daily current weather, all day…everyday!</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Zipcode Activity-->
+    <string name="zipCodeActivityLabel">Enter a zip and country code</string>
+    <string name="zipCodeActivityInputHint">03456,us</string>
+    <string name="zipCodeDisplayWeatherButtonLabel">Display Weather</string>
+    <string name="welcomeMessage">Welcome To Your Daily Weather!</string>
+</resources>

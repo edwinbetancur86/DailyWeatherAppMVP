@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DisplayWeatherActivity"
+    tools:showIn="@layout/app_bar_display_weather">
+
+    <TextView
+        android:id="@+id/weatherHeaderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="25sp"
+        android:text="Weather"/>
+
+    <LinearLayout
+        android:id="@+id/currentConditionBlock"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/weatherHeaderLabel"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:id="@+id/leftCurrentConditionBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:id="@+id/currentCondition"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/blackColor"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingStart="20dp"
+                android:textSize="20sp"
+                android:text="Party Cloudy"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/currentCondition"
+                android:paddingTop="10dp"
+                android:paddingStart="20dp">
+                <TextView
+                    android:id="@+id/currentDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Sunshine and clouds possible, blah blah blah and some more more more looooooooooooooooooooooooooooooooooooooooooooooonoooooooooooog"/>
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tempSymbolBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/currentTemp"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/blackColor"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="10dp"
+                android:textSize="45dp"
+                android:text="180"/>
+
+            <TextView
+                android:id="@+id/fahrenheitDegreeSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/currentTemp"
+                android:textColor="@color/blackColor"
+                android:textSize="35dp"
+                android:text="\u2109"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollStatusBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currentConditionBlock">
+        <RelativeLayout
+            android:id="@+id/parentRelStatusBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/border1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/borderColor" />
+
+            <LinearLayout
+                android:id="@+id/statusBlock1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border1"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/windSpeedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackColor"
+                    android:text="Wind Speed"/>
+
+                <TextView
+                    android:id="@+id/windSpeedResult"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="20sp"
+                    android:text="1 m/s"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/border2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:background="@color/borderColor"
+                android:layout_below="@+id/statusBlock1"/>
+
+            <LinearLayout
+                android:id="@+id/statusBlock2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statusBlock1"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/cloudinessLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackColor"
+                    android:text="Cloudiness"/>
+
+                <TextView
+                    android:id="@+id/cloudinessResult"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="20sp"
+                    android:text="Temporal Artery"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/border3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:background="@color/borderColor"
+                android:layout_below="@+id/statusBlock2"/>
+
+            <LinearLayout
+                android:id="@+id/statusBlock3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border3"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/PressureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackColor"
+                    android:text="Pressure"/>
+
+                <TextView
+                    android:id="@+id/pressureResult"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="20sp"
+                    android:text="1035 hpa"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/border4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:background="@color/borderColor"
+                android:layout_below="@+id/statusBlock3"/>
+
+            <LinearLayout
+                android:id="@+id/statusBlock4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border4"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/humidityLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackColor"
+                    android:text="Humidity"/>
+
+                <TextView
+                    android:id="@+id/humidityResult"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="20sp"
+                    android:text="93%"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/border5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:background="@color/borderColor"
+                android:layout_below="@+id/statusBlock4"/>
+
+            <LinearLayout
+                android:id="@+id/statusBlock5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border5"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/sunriseLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blackColor"
+                    android:text="Sunrise"/>
+
+                <TextView
+                    android:id="@+id/sunriseResult"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="20sp"
+                    android:text="Sunset"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blackColor"
+    tools:context=".ZipcodeActivity">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:textColor="@color/skyBlue"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/welcomeMessage"/>
+
+    <TextView
+        android:id="@+id/zipAndCountryCode"
+        android:textColor="@color/skyBlue"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome"
+        android:text="@string/zipCodeActivityLabel"/>
+
+
+    <EditText
+        android:id="@+id/editZipAndCountryCode"
+        android:textColor="@color/blackColor"
+        android:background="@color/borderColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:layout_below="@+id/zipAndCountryCode"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/zipCodeActivityInputHint" />
+
+    <Button
+        android:id="@+id/displayWeatherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="15dp"
+        android:onClick="displayWeather"
+        android:background="@color/colorPrimary"
+        android:text="@string/zipCodeDisplayWeatherButtonLabel"/>
+
+</RelativeLayout>
