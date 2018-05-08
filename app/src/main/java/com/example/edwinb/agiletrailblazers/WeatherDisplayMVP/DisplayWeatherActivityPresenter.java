@@ -33,7 +33,8 @@ public class DisplayWeatherActivityPresenter implements DisplayWeatherActivityMV
                         view.getCurrentCon(), view.getTemp(),
                         view.getDes(), view.getCloudiness(),
                         view.getPressure(), view.getHumidity(),
-                        view.getSunrise(), handleTheWeatherStatusResponse);
+                        view.getSunrise(), view.getCounty(),
+                        view.getCity(), handleTheWeatherStatusResponse);
                 Log.d("Presenter", "Inside presenter");
             }
             else

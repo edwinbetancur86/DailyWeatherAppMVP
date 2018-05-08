@@ -14,10 +14,11 @@ public class ApiDisplayWeatherRepo implements DisplayWeatherRepo {
     @Override
     public void getWeatherResponse(Wind windSpeed, TheWeather currentCon, Main temp, TheWeather des,
                                    Clouds cloudiness, Main pressure, Main humidity, Sys sunrise,
+                                   Sys country, TheWeather city,
                                    HandleTheWeatherStatusResponse handleTheWeatherStatusResponse) {
         // Handle the weather status from the response
         Log.d(TAG, "Wind speed is: " + String.valueOf(windSpeed.getSpeed()));
         handleTheWeatherStatusResponse.handleWeatherResponse(windSpeed, currentCon, temp, des,
-                cloudiness, pressure, humidity, sunrise);
+                cloudiness, pressure, humidity, sunrise, country, city);
     }
 }

@@ -18,6 +18,8 @@ public interface DisplayWeatherActivityMVP {
         Main getPressure();
         Main getHumidity();
         Sys getSunrise();
+        Sys getCounty();
+        TheWeather getCity();
     }
 
     interface Presenter {
@@ -29,6 +31,7 @@ public interface DisplayWeatherActivityMVP {
     interface Model {
         void createWeatherResponse(Wind windSpeed, TheWeather currentCon, Main temp, TheWeather des,
                                    Clouds cloudiness, Main pressure, Main humidity, Sys sunrise,
+                                   Sys country, TheWeather city,
                                    HandleTheWeatherStatusResponse handleTheWeatherStatusResponse);
     }
 }

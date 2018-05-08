@@ -14,5 +14,7 @@ public interface HandleTheWeatherStatusResponse {
                                Clouds cloudiness,
                                Main pressure,
                                Main humidity,
-                               Sys sunrise);
+                               Sys sunrise,
+                               Sys country,
+                               TheWeather city);
 }

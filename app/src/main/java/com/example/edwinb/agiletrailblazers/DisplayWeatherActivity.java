@@ -157,12 +157,18 @@ public class DisplayWeatherActivity extends MotherActivity
     }
 
     @Override
-    public Sys getSunrise() {
-        return theWeatherResponse.getSys();
-    }
+    public Sys getSunrise() {return theWeatherResponse.getSys();}
 
     @Override
-    public void handleWeatherResponse(Wind windSpeed, TheWeather currentCon, Main temp, TheWeather des, Clouds cloudiness, Main pressure, Main humidity, Sys sunrise) {
+    public Sys getCounty() {return theWeatherResponse.getSys();}
+
+    @Override
+    public TheWeather getCity() {return theWeatherResponse;}
+
+    @Override
+    public void handleWeatherResponse(Wind windSpeed, TheWeather currentCon, Main temp,
+                                      TheWeather des, Clouds cloudiness, Main pressure,
+                                      Main humidity, Sys sunrise, Sys country, TheWeather city) {
         ((TextView) findViewById(R.id.currentCondition)).setText(String.valueOf(currentCon.getWeather().get(0).getMain()));
         ((TextView) findViewById(R.id.currentDescription)).setText(String.valueOf(des.getWeather().get(0).getDescription()));
         ((TextView) findViewById(R.id.currentTemp)).setText(String.valueOf(motherUtil.convertCalvinToFahrenheit(temp.getTemp())));
@@ -171,5 +177,7 @@ public class DisplayWeatherActivity extends MotherActivity
         ((TextView) findViewById(R.id.pressureResult)).setText(String.valueOf(pressure.getPressure() + " hpa"));
         ((TextView) findViewById(R.id.humidityResult)).setText(String.valueOf(humidity.getHumidity() + "%"));
         ((TextView) findViewById(R.id.sunriseResult)).setText(String.valueOf(sunrise.getSunrise()));
+        ((TextView) findViewById(R.id.measuredCityResult)).setText(String.valueOf(city.getName() + ","));
+        ((TextView) findViewById(R.id.measuredCountryResult)).setText(String.valueOf(country.getCountry()));
     }
 }

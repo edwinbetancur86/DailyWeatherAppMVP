@@ -9,5 +9,6 @@ import com.example.edwinb.agiletrailblazers.Model.Wind;
 public interface DisplayWeatherRepo {
     void getWeatherResponse(Wind windSpeed, TheWeather currentCon, Main temp, TheWeather des,
                             Clouds cloudiness, Main pressure, Main humidity, Sys sunrise,
+                            Sys country, TheWeather city,
                             HandleTheWeatherStatusResponse handleTheWeatherStatusResponse);
 }
