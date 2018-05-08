@@ -4,7 +4,7 @@ This app was not designed to run build variants on release but rather on debug o
 To run the app pull down the project on android studio by going to 
 VCS -> Check out from version control -> Github
 on the Clone repository window you would want to test first to see if the 
-connection is successful before cloning, leave the defaluts, unless you want
-to change the dirctory name and parent directory path and click on clone.
+connection is successful before cloning, leave the defaults, unless you want
+to change the directory name and parent directory path and click on clone.
 You might have to install additional plugins or additional support libraries
 to be able to build gradle successfully. 
