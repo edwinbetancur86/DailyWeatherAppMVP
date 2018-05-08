@@ -1,8 +1,5 @@
 package com.example.edwinb.agiletrailblazers.Dagger.Modules;
 
-import android.content.Context;
-
-import com.example.edwinb.agiletrailblazers.Dagger.App;
 import com.example.edwinb.agiletrailblazers.Dagger.AppScope;
 import com.example.edwinb.agiletrailblazers.Util.NetworkUtility;
 
@@ -14,8 +11,8 @@ public class NetworkUtilityModule {
 
     @AppScope
     @Provides
-    public NetworkUtility getNetworkUtility(Context context) {
-        return new NetworkUtility((App) context);
+    public NetworkUtility getNetworkUtility() {
+        return new NetworkUtility();
     }
 
 }

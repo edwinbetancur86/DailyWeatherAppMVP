@@ -17,13 +17,11 @@ public class WeatherDaoModule {
 
     @AppScope
     @Provides
-    TheWeatherDao getWeatherDao(Context context)
-    {
+    TheWeatherDao getWeatherDao(Context context) {
         if (BuildConfig.MOCK_WEATHER_RESPONSE) {
             Log.d("WeatherDaoModule", "Inside true statement of MOCK_WEATHER_RESPONSE");
             return new MockWeatherDao((App) context);
-        } else {
+        } else
             return new TheWeatherDao((App) context);
-        }
     }
 }

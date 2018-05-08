@@ -52,10 +52,7 @@ public class BaseDao {
                     .subscribe(observer);
         }
         else
-        {
             throw new ConnectionUnavailableException("Unable to establish network connection.");
-        }
-
     }
 
     private class ServiceObserver implements Observer {

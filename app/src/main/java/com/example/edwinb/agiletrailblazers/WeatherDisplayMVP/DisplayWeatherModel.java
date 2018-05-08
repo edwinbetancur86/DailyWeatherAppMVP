@@ -20,6 +20,7 @@ public class DisplayWeatherModel implements DisplayWeatherActivityMVP.Model {
                                       Clouds cloudiness, Main pressure, Main humidity, Sys sunrise,
                                       HandleTheWeatherStatusResponse handleTheWeatherStatusResponse) {
         Log.d(TAG, "Inside DisplayWeatherModel just before the getWeatherResponse call");
-        displayWeatherRepo.getWeatherResponse(windSpeed, currentCon, temp, des, cloudiness, pressure, humidity, sunrise, handleTheWeatherStatusResponse);
+        displayWeatherRepo.getWeatherResponse
+                (windSpeed, currentCon, temp, des, cloudiness, pressure, humidity, sunrise, handleTheWeatherStatusResponse);
     }
 }

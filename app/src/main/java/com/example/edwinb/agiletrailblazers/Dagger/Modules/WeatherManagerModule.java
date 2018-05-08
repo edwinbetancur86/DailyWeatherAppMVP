@@ -12,8 +12,6 @@ import dagger.Provides;
 @Module
 public class WeatherManagerModule {
 
-    private final String TAG = "WeatherManagerModule";
-
     @AppScope
     @Provides
     WeatherManager getWeatherManager(Context context)

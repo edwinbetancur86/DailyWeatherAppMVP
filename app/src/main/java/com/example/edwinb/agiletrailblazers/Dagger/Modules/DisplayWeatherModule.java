@@ -13,14 +13,12 @@ import dagger.Provides;
 public class DisplayWeatherModule {
 
     @Provides
-    public DisplayWeatherActivityMVP.Presenter providesDisplayWeatherPresenter(DisplayWeatherActivityMVP.Model model)
-    {
+    public DisplayWeatherActivityMVP.Presenter providesDisplayWeatherPresenter(DisplayWeatherActivityMVP.Model model) {
         return new DisplayWeatherActivityPresenter(model);
     }
 
     @Provides
-    public DisplayWeatherActivityMVP.Model providesDisplayWeatherModel(DisplayWeatherRepo repo)
-    {
+    public DisplayWeatherActivityMVP.Model providesDisplayWeatherModel(DisplayWeatherRepo repo) {
         return new DisplayWeatherModel(repo);
     }
 

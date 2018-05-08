@@ -1,15 +1,10 @@
 package com.example.edwinb.agiletrailblazers;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,16 +35,16 @@ public class DisplayWeatherActivity extends MotherActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_weather);
         ((App) getApplication()).getComponent().inject(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         String weatherResponseJson = getIntent().getStringExtra("WEATHER_RESPONSE");
@@ -66,7 +61,7 @@ public class DisplayWeatherActivity extends MotherActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -116,7 +111,7 @@ public class DisplayWeatherActivity extends MotherActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -170,7 +165,7 @@ public class DisplayWeatherActivity extends MotherActivity
     public void handleWeatherResponse(Wind windSpeed, TheWeather currentCon, Main temp, TheWeather des, Clouds cloudiness, Main pressure, Main humidity, Sys sunrise) {
         ((TextView) findViewById(R.id.currentCondition)).setText(String.valueOf(currentCon.getWeather().get(0).getMain()));
         ((TextView) findViewById(R.id.currentDescription)).setText(String.valueOf(des.getWeather().get(0).getDescription()));
-        ((TextView) findViewById(R.id.currentTemp)).setText(String.valueOf(motherUtil.convertCelvinToFahrenheit(temp.getTemp())));
+        ((TextView) findViewById(R.id.currentTemp)).setText(String.valueOf(motherUtil.convertCalvinToFahrenheit(temp.getTemp())));
         ((TextView) findViewById(R.id.windSpeedResult)).setText(String.valueOf(windSpeed.getSpeed() + " m/s"));
         ((TextView) findViewById(R.id.cloudinessResult)).setText(String.valueOf(cloudiness.getAll()));
         ((TextView) findViewById(R.id.pressureResult)).setText(String.valueOf(pressure.getPressure() + " hpa"));

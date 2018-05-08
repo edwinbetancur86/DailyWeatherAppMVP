@@ -29,11 +29,10 @@ public class ElementToObjectDeserializer<T> implements JsonDeserializer<Object> 
                 resultList.add(context.<T>deserialize(e, clazz));
             }
             return resultList;
-        } else if (json.isJsonPrimitive()) {
+        } else if (json.isJsonPrimitive())
             return context.<T>deserialize(json, clazz);
-        } else {
+         else
             throw new RuntimeException("Unexpected JSON type: " + json.getClass());
-        }
     }
 
 }

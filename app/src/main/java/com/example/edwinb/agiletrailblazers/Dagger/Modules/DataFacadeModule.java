@@ -13,8 +13,6 @@ import dagger.Provides;
 @Module
 public class DataFacadeModule {
 
-    private final String TAG = "AuthenticationDaoModule";
-
     @AppScope
     @Provides
     public DataFacade getDataFacade(Context context) {

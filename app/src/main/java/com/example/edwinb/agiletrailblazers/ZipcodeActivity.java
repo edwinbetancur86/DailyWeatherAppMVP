@@ -1,9 +1,7 @@
 package com.example.edwinb.agiletrailblazers;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -11,10 +9,6 @@ import com.example.edwinb.agiletrailblazers.Dagger.App;
 import com.example.edwinb.agiletrailblazers.ZipCodeMVP.ZipCodeActivityMVP;
 
 import javax.inject.Inject;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ZipcodeActivity extends MotherActivity implements ZipCodeActivityMVP.View{
 
@@ -28,7 +22,7 @@ public class ZipcodeActivity extends MotherActivity implements ZipCodeActivityMV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zipcode);
         ((App) getApplication()).getComponent().inject(this);
-        zipAndCountryCodeEdit = (EditText) findViewById(R.id.editZipAndCountryCode);
+        zipAndCountryCodeEdit = findViewById(R.id.editZipAndCountryCode);
     }
 
     @Override

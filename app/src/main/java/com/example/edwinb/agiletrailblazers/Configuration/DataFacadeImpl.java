@@ -9,22 +9,14 @@ public class DataFacadeImpl implements DataFacade {
 
     @Inject protected WeatherManager weatherManager;
 
-
-    public DataFacadeImpl() {
-
-    }
-
     public DataFacadeImpl(App app) {
         app.getComponent().inject(this);
     }
 
     @Override
-    public void getTheWeatherSum(String zipAndCountryCode, String apiKey, ServiceListener listener) throws ConnectionUnavailableException {
-        weatherManager.getWeather(zipAndCountryCode, apiKey, listener);
-    }
-
-    @Override
-    public void getTheWeatherSum(String zipAndCountryCode, String apiKey, ServiceListener listener, boolean forceServiceCall) throws ConnectionUnavailableException {
+    public void getTheWeatherSum(String zipAndCountryCode,
+                                 String apiKey, ServiceListener listener,
+                                 boolean forceServiceCall) throws ConnectionUnavailableException {
         weatherManager.getWeather(zipAndCountryCode, apiKey, listener, forceServiceCall);
     }
 }

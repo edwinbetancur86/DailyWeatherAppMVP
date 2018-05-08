@@ -9,8 +9,7 @@ public class DisplayWeatherActivityPresenter implements DisplayWeatherActivityMV
     private DisplayWeatherActivityMVP.View view;
     private DisplayWeatherActivityMVP.Model model;
 
-    public DisplayWeatherActivityPresenter(DisplayWeatherActivityMVP.Model model)
-    {
+    public DisplayWeatherActivityPresenter(DisplayWeatherActivityMVP.Model model) {
         this.model = model;
     }
 
@@ -21,8 +20,7 @@ public class DisplayWeatherActivityPresenter implements DisplayWeatherActivityMV
 
     @Override
     public void displayWeather(HandleTheWeatherStatusResponse handleTheWeatherStatusResponse) {
-        if (view != null)
-        {
+        if (view != null) {
             if (view.getWindSpeed() != null
                     || view.getTemp() != null
                     || view.getSunrise() != null
@@ -30,8 +28,7 @@ public class DisplayWeatherActivityPresenter implements DisplayWeatherActivityMV
                     || view.getCurrentCon() != null
                     || view.getDes() != null
                     || view.getHumidity() != null
-                    || view.getPressure() != null)
-            {
+                    || view.getPressure() != null) {
                 model.createWeatherResponse(view.getWindSpeed(),
                         view.getCurrentCon(), view.getTemp(),
                         view.getDes(), view.getCloudiness(),
@@ -40,9 +37,7 @@ public class DisplayWeatherActivityPresenter implements DisplayWeatherActivityMV
                 Log.d("Presenter", "Inside presenter");
             }
             else
-            {
                 view.showProcessingError();
-            }
         }
     }
 

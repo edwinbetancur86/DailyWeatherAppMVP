@@ -6,12 +6,7 @@ import android.net.NetworkInfo;
 
 public class NetworkUtility {
 
-    //private static Context context;
     private static NetworkInfo activeNetworkInfo;
-
-    public NetworkUtility(Context con) {
-        //context = con;
-    }
 
     public static boolean hasActiveInternetConnection(Context context) {
         ConnectivityManager connectivityManager

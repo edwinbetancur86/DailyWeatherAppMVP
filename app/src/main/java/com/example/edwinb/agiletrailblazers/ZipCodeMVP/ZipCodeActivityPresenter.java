@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 
 import com.example.edwinb.agiletrailblazers.Configuration.DataFacade;
-import com.example.edwinb.agiletrailblazers.Configuration.ServiceListener;
 
 public class ZipCodeActivityPresenter implements ZipCodeActivityMVP.Presenter {
 
@@ -25,13 +24,11 @@ public class ZipCodeActivityPresenter implements ZipCodeActivityMVP.Presenter {
 
     @Override
     public void showWeatherButtonClicked(Context context,DataFacade dataFacade) {
-        if (view != null)
-        {
+        if (view != null) {
             if (view.getZipAndCountryCode().trim().equals(""))
                 view.showInputError(ERROR_EMPTY_TEXT_MESSAGE);
             else
                 model.createWeatherResponse(context, view.getZipAndCountryCode(), view.getApiKey(), dataFacade);
-
         }
     }
 }

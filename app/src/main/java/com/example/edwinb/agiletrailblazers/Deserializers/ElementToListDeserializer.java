@@ -29,11 +29,10 @@ public class ElementToListDeserializer<T> implements JsonDeserializer<List<T>> {
             for (JsonElement e : json.getAsJsonArray()) {
                 resultList.add(context.<T>deserialize(e, clazz));
             }
-        } else if (json.isJsonObject()) {
+        } else if (json.isJsonObject())
             resultList.add(context.<T>deserialize(json, clazz));
-        } else {
+          else
             throw new RuntimeException("Unexpected JSON type: " + json.getClass());
-        }
         return resultList;
     }
 

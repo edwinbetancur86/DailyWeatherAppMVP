@@ -9,7 +9,6 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.edwinb.agiletrailblazers.Configuration.DataFacade;
 import com.example.edwinb.agiletrailblazers.Dagger.App;
@@ -33,9 +32,7 @@ public abstract class MotherActivity extends AppCompatActivity {
 
     private final String TAG = "MotherActivity";
     @Inject protected DataFacade dataFacade;
-    //@Inject protected CacheManager cacheManager;
-    @Inject
-    protected MotherUtility motherUtil;
+    @Inject protected MotherUtility motherUtil;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -91,7 +88,5 @@ public abstract class MotherActivity extends AppCompatActivity {
         NavUtils.navigateUpTo(this, upIntent);
         finish();
     }
-
-
 }
 

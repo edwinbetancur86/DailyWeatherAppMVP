@@ -1,9 +1,6 @@
 package com.example.edwinb.agiletrailblazers.WeatherDisplayMVP;
 
-import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
-
 import com.example.edwinb.agiletrailblazers.Model.Clouds;
 import com.example.edwinb.agiletrailblazers.Model.Main;
 import com.example.edwinb.agiletrailblazers.Model.Sys;
@@ -20,6 +17,7 @@ public class ApiDisplayWeatherRepo implements DisplayWeatherRepo {
                                    HandleTheWeatherStatusResponse handleTheWeatherStatusResponse) {
         // Handle the weather status from the response
         Log.d(TAG, "Wind speed is: " + String.valueOf(windSpeed.getSpeed()));
-        handleTheWeatherStatusResponse.handleWeatherResponse(windSpeed, currentCon, temp, des, cloudiness, pressure, humidity, sunrise);
+        handleTheWeatherStatusResponse.handleWeatherResponse(windSpeed, currentCon, temp, des,
+                cloudiness, pressure, humidity, sunrise);
     }
 }

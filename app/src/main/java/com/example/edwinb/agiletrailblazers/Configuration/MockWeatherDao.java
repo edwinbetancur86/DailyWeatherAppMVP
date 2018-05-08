@@ -6,7 +6,6 @@ import com.example.edwinb.agiletrailblazers.Model.TheWeather;
 
 public class MockWeatherDao extends TheWeatherDao {
 
-
     public MockWeatherDao(App context) {
         super(context);
     }

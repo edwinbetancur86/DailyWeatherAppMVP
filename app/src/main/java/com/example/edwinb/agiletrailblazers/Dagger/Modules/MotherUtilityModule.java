@@ -1,8 +1,5 @@
 package com.example.edwinb.agiletrailblazers.Dagger.Modules;
 
-import android.content.Context;
-
-import com.example.edwinb.agiletrailblazers.Dagger.App;
 import com.example.edwinb.agiletrailblazers.Dagger.AppScope;
 import com.example.edwinb.agiletrailblazers.Util.MotherUtility;
 
@@ -12,12 +9,10 @@ import dagger.Provides;
 @Module
 public class MotherUtilityModule {
 
-    private final String TAG = "MotherUtilityModule";
-
     @AppScope
     @Provides
-    MotherUtility getHistoryManager(Context context)
+    MotherUtility getMotherUtility()
     {
-        return new MotherUtility((App) context);
+        return new MotherUtility();
     }
 }

@@ -1,11 +1,9 @@
 package com.example.edwinb.agiletrailblazers.Configuration;
 
 import android.content.Context;
-
 import com.example.edwinb.agiletrailblazers.API.Api;
 import com.example.edwinb.agiletrailblazers.CustomExceptions.ConnectionUnavailableException;
 import com.example.edwinb.agiletrailblazers.Dagger.App;
-import com.example.edwinb.agiletrailblazers.Deserializers.ElementToListDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -13,7 +11,6 @@ import io.reactivex.Observable;
 
 public class TheWeatherDao extends BaseDao {
 
-    private final String TAG = "TheWeatherDao";
     protected Context context;
 
     public TheWeatherDao(App app) {
@@ -34,11 +31,6 @@ public class TheWeatherDao extends BaseDao {
      * @return
      */
     private Gson buildGson() {
-        return new GsonBuilder()
-                /*.registerTypeAdapter(
-                        new TypeToken<List<???>>() {
-                        }.getType(),
-                        new ElementToListDeserializer<>(???.class))*/
-                .create();
+        return new GsonBuilder().create();
     }
 }
