@@ -2,6 +2,7 @@ package com.example.edwinb.agiletrailblazers.Configuration;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.edwinb.agiletrailblazers.API.Api;
 import com.example.edwinb.agiletrailblazers.CustomExceptions.ConnectionUnavailableException;
@@ -51,8 +52,11 @@ public class BaseDao {
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(observer);
         }
-        else
+        else {
+            Toast.makeText(context, "No internet connection detected. " +
+                    "Please check your connection and try again", Toast.LENGTH_LONG).show();
             throw new ConnectionUnavailableException("Unable to establish network connection.");
+        }
     }
 
     private class ServiceObserver implements Observer {
